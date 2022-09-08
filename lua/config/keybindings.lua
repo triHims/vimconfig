@@ -5,6 +5,11 @@ local term_opts = { silent = true }
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
 
+--Legends 
+--<D-key> stands for command in mac + key
+--<C-key> stands for control/ctrl(windows/linux) in mac + key
+--<A-key> stands for Alt in mac + key
+--<M-key> stands for Alt in windows style keyboards + key
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
@@ -22,15 +27,14 @@ vim.g.maplocalleader = " "
 
 
 -- Normal --
--- Better window navigation
+-- Better window navigation Ctrl [hjkl]
 keymap("n","<C-k>",    "<C-w>k",{})
 keymap("n","<C-j>",  "<C-w>j",{})
 keymap("n","<C-h>",  "<C-w>h",{})
 keymap("n","<C-l>", "<C-w>l",{})
 
-keymap("n", "<leader>e", ":Lex 30<cr>", opts)
 
--- Resize with Ctrl [hjkl]
+-- Resize with Command [arrowkeys](bug: they get flipped)
 keymap("n", "<D-Down>", ":resize +2<CR>", opts)
 keymap("n", "<D-Up>", ":resize -2<CR>", opts)
 keymap("n", "<D-Right>", ":vertical resize -2<CR>", opts)
@@ -49,7 +53,7 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
--- Move text up and down
+-- Move text up and down 
 keymap("v", "<A-j>", ":m .+1<CR>==", opts)
 keymap("v", "<A-k>", ":m .-2<CR>==", opts)
 -- keymap("v", "p", '"_dP', opts)
@@ -87,3 +91,4 @@ keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 
 --LSP FORMAT COMMAND 
 keymap("n", "<leader>bf", ":Format<cr>", opts)
+--keymap("n", "<leader>e", ":Lex 30<cr>", opts)
