@@ -62,6 +62,7 @@ return packer.startup(function(use)
     use "saadparwaiz1/cmp_luasnip" -- snippet completions
     use "hrsh7th/cmp-nvim-lsp"
     use "hrsh7th/cmp-nvim-lua"
+    use {'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim'}
 
     -- snippets
     use "L3MON4D3/LuaSnip" --snippet engine
@@ -98,8 +99,8 @@ return packer.startup(function(use)
 
 
     --Clojure Conjure
-    use {"Olical/conjure", ft = {'clj','clojure'}}
 
+    use {"Olical/conjure", ft = {'clj','clojure'}}
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins

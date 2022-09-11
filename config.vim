@@ -42,6 +42,10 @@ nmap <C-P> :FZF<CR>
 nmap <leader>pf :Rg<CR>
 nnoremap <leader>bb :Buffers<CR>
 
+"Some asthethic changes.
+set fcs=foldopen:🞃,foldclose:▸,foldsep:¦,stl:⚋
+set foldcolumn=2
+set foldmethod=marker
 
 
 

@@ -78,10 +78,10 @@ keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 --Commenting
 -- Comment
-keymap("n", "<M-/>",'<CMD>lua require("Comment.api").toggle_current_linewise()<CR>', opts)
-keymap("n", "÷",'<CMD>lua require("Comment.api").toggle_current_linewise()<CR>', opts)
-keymap("v", "<M-/>", '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>', opts)
-keymap("v", "÷", '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>', opts)
+keymap("n", "<M-/>",'<CMD>lua require("Comment.api").toggle.linewise()<CR>', opts)
+keymap("n", "÷",'<CMD>lua require("Comment.api").toggle.linewise()<CR>', opts)
+keymap("v", "<M-/>", '<ESC><CMD>lua require("Comment.api").toggle.linewise(vim.fn.visualmode())<CR>', opts)
+keymap("v", "÷", '<ESC><CMD>lua require("Comment.api").toggle.linewise(vim.fn.visualmode())<CR>', opts)
 
 
 
