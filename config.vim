@@ -36,6 +36,7 @@ set updatetime=500
 
 "Map leader
 let mapleader = " " 
+let timeoutlen = 2000
 
 "Fzf binding
 nmap <C-P> :FZF<CR>
