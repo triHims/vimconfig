@@ -20,4 +20,13 @@ configs.setup {
         enable = true,
         enable_autocmd = false,
     },
+    incremental_selection = {
+    enable = true,
+    keymaps = {
+      init_selection = "<leader>vn",
+      node_incremental = "<leader>vr",
+      scope_incremental = "<leader>vc",
+      node_decremental = "<leader>vm",
+    },
+  },
 }

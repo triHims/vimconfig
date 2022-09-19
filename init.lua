@@ -1,6 +1,6 @@
 require "config.plugin"
 --Load vim configs
-local CONFIGDIR = "~/.config/nvim/"
+local CONFIGDIR = "~/.config/nvim/vimconfig/"
 local VIMNATIVECONFIG = string.format('source %sconfig.vim',CONFIGDIR)
 vim.cmd(VIMNATIVECONFIG)
 vim.opt.shortmess:append "c"
@@ -15,5 +15,10 @@ require "config.gitsigns"
 require "config.nvim-tree"
 require "config.flutter"
 
+
+local FZFEXTENDED = string.format('source %sfzfextend.vim',CONFIGDIR)
+
+
+vim.cmd(FZFEXTENDED)
 
 

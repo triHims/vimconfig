@@ -42,6 +42,7 @@ let timeoutlen = 2000
 nmap <C-P> :FZF<CR>
 nmap <leader>pf :Rg<CR>
 nnoremap <leader>bb :Buffers<CR>
+nnoremap <leader>hh :Helptags<CR>
 
 "Some asthethic changes.
 set fcs=foldopen:🞃,foldclose:▸,foldsep:¦,stl:⚋

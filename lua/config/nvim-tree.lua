@@ -51,6 +51,7 @@ nvim_tree.setup {
     auto_open = true,
   },
   diagnostics = {
+    show_on_dirs = true,
     enable = true,
     icons = {
       hint = "",

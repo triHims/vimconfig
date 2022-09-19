@@ -54,8 +54,15 @@ keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
 -- Move text up and down 
-keymap("v", "<A-j>", ":m .+1<CR>==", opts)
-keymap("v", "<A-k>", ":m .-2<CR>==", opts)
+keymap("n", "<A-j>", ":m .+1<CR>==", opts)
+keymap("n", "<A-k>", ":m .-2<CR>==", opts)
+keymap("n", "<M-j>", ":m .+1<CR>==", opts)
+keymap("n", "<M-k>", ":m .-2<CR>==", opts)
+
+--[[ Sppecial ]]
+keymap("v", "˝", ":m .+1<CR>==", opts)
+keymap("v", "˚", ":m .-2<CR>==", opts)
+
 -- keymap("v", "p", '"_dP', opts)
 
 -- Visual Block --
@@ -66,6 +73,9 @@ keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<M-j>", ":move '>+1<CR>gv-gv", opts) --for others
 keymap("x", "<M-k>", ":move '<-2<CR>gv-gv", opts) --For others
+ --[[ Special  ]]
+keymap("x", "˝", ":move '>+1<CR>gv-gv", opts)
+keymap("x", "˚", ":move '<-2<CR>gv-gv", opts)
 
 -- Terminal --
 -- Better terminal navigation
