@@ -25,7 +25,7 @@ function M.setup()
             statusline = { device = true, app_version = true },
         },
         widget_guides = { enabled = false, },
-        dev_log = { enabled = false, open_cmd = "tabedit" },
+        dev_log = { enabled = true, open_cmd = "tabedit" },
         lsp = {
             color = {
                 enabled = true,

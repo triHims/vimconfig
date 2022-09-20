@@ -33,6 +33,21 @@ end
 
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
+
+local keyBinds = {
+            { key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
+            { key = "h", cb = tree_cb "close_node" },
+            { key = "v", cb = tree_cb "vsplit" },
+          }
+
+
+local config_tree_status_ok, nvim_tree_api = pcall(require, "nvim-tree.api")
+if config_tree_status_ok then
+   table.insert(keyBinds,{ key = "<leader>c", action ="current_node_as_root",  action_cb = nvim_tree_api.tree.change_root_to_node })
+end
+
+
+
 nvim_tree.setup {
   disable_netrw = true,
   hijack_netrw = true,
@@ -86,11 +101,7 @@ nvim_tree.setup {
     auto_resize = true,
     mappings = {
       custom_only = false,
-      list = {
-        { key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
-        { key = "h", cb = tree_cb "close_node" },
-        { key = "v", cb = tree_cb "vsplit" },
-      },
+      list = keyBinds,
     },
     number = false,
     relativenumber = false,
@@ -111,3 +122,6 @@ nvim_tree.setup {
     tree_width = 30,
   },
 }
+
+
+
