@@ -79,6 +79,7 @@ cmp.setup {
             "i",
             "s",
         }),
+
         ["<S-Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_prev_item()
@@ -91,6 +92,17 @@ cmp.setup {
             "i",
             "s",
         }),
+        ["<M-Tab>"] = cmp.mapping(function(fallback) --quickly expand snippets 
+            if luasnip.expandable() then
+                luasnip.expand()
+            elseif luasnip.expand_or_jumpable() then
+                luasnip.expand_or_jump()
+            else
+                fallback()
+            end
+        end, {
+            "i",
+        }),
     },
     formatting = {
         fields = { "kind", "abbr", "menu" },
@@ -99,21 +111,22 @@ cmp.setup {
             vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
             -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
             vim_item.menu = ({
-                nvim_lsp = "[LSP]",
                 nvim_lua = "[NVIM_LUA]",
                 luasnip = "[Snippet]",
                 buffer = "[Buffer]",
                 path = "[Path]",
+                nvim_lsp = "[LSP]",
             })[entry.source.name]
             return vim_item
         end,
     },
+    -- First couse is picked first
     sources = {
-        { name = "nvim_lsp" },
-        { name = "nvim_lua" },
         { name = "luasnip" },
         { name = "buffer" },
         { name = "path" },
+        { name = "nvim_lua" },
+        { name = "nvim_lsp" },
     },
     confirm_opts = {
         behavior = cmp.ConfirmBehavior.Replace,
