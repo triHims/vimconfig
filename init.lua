@@ -14,6 +14,7 @@ require "config.comment"
 require "config.gitsigns"
 require "config.nvim-tree"
 require "config.flutter"
+require "config.snipload"
 
 
 local FZFEXTENDED = string.format('source %sfzfextend.vim',CONFIGDIR)

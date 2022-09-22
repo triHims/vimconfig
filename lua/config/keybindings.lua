@@ -94,6 +94,8 @@ keymap("v", "<M-/>", '<ESC><CMD>lua require("Comment.api").toggle.linewise(vim.f
 keymap("v", "÷", '<ESC><CMD>lua require("Comment.api").toggle.linewise(vim.fn.visualmode())<CR>', opts)
 
 
+keymap("i", "<C-h>", "<Plug>luasnip-next-choice", {})
+keymap("i", "<C-l>", "<Plug>luasnip-prev-choice", {})
 
 --NVIMTREE
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
