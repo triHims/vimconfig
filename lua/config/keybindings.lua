@@ -67,8 +67,6 @@ keymap("v", "˚", ":m .-2<CR>==", opts)
 
 -- Visual Block --
 -- Move text up and down
-keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<M-j>", ":move '>+1<CR>gv-gv", opts) --for others
@@ -94,11 +92,9 @@ keymap("v", "<M-/>", '<ESC><CMD>lua require("Comment.api").toggle.linewise(vim.f
 keymap("v", "÷", '<ESC><CMD>lua require("Comment.api").toggle.linewise(vim.fn.visualmode())<CR>', opts)
 
 
-keymap("i", "<C-h>", "<Plug>luasnip-next-choice", {})
-keymap("i", "<C-l>", "<Plug>luasnip-prev-choice", {})
 
 --NVIMTREE
-keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+keymap("n", "<leader>e", ":NvimTreeFindFile<cr>", opts)
 
 
 --LSP FORMAT COMMAND 

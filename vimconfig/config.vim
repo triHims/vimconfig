@@ -47,7 +47,7 @@ nnoremap <leader>hh :Helptags<CR>
 "Some asthethic changes.
 set fcs=foldopen:🞃,foldclose:▸,foldsep:¦,stl:⚋
 set foldcolumn=2
-set foldmethod=marker
+set foldmethod=manual
 
 
 

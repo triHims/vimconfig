@@ -40,18 +40,20 @@ packer.init {
 
 -- Install your plugins here
 return packer.startup(function(use)
+    --Local VIMRC support
+    use 'embear/vim-localvimrc'
     -- My plugins here
     use "wbthomason/packer.nvim" -- Have packer manage itself
     use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
     use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
     --Themes
-    use { 'gruvbox-community/gruvbox' , as = 'gruvbox'}
-    use {'dracula/vim', as = 'dracula'}
-    use {'folke/tokyonight.nvim', as='tokyonight'}
+    use { 'gruvbox-community/gruvbox', as = 'gruvbox' }
+    use { 'dracula/vim', as = 'dracula' }
+    use { 'folke/tokyonight.nvim', as = 'tokyonight' }
     --
     --
     --fzf
-    use {'junegunn/fzf', run = ':call fzf#install()' }
+    use { 'junegunn/fzf', run = ':call fzf#install()' }
     use 'junegunn/fzf.vim'
 
     -- cmp plugins
@@ -60,9 +62,9 @@ return packer.startup(function(use)
     use "hrsh7th/cmp-path" -- path completions
     use "hrsh7th/cmp-cmdline" -- cmdline completions
     use "saadparwaiz1/cmp_luasnip" -- snippet completions
-    use "hrsh7th/cmp-nvim-lsp"
-    use "hrsh7th/cmp-nvim-lua"
-    use {'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim'}
+    use "hrsh7th/cmp-nvim-lsp" --[[ Important : this adds the LSP capability to cmp. Used in handlers file to extend ]]
+    use "hrsh7th/cmp-nvim-lua" --[[  You can get the vim.lsp.util.* API with this source. ]]
+    use { 'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim' }
 
     -- snippets
     use "L3MON4D3/LuaSnip" --snippet engine
@@ -83,12 +85,12 @@ return packer.startup(function(use)
     use "tpope/vim-surround"
 
 
-    --Comment support 
+    --Comment support
     use "numToStr/Comment.nvim" -- Easily comment stuff
     use 'JoosepAlviste/nvim-ts-context-commentstring'
 
 
-    --NeoTree + Icons 
+    --NeoTree + Icons
     use 'kyazdani42/nvim-web-devicons'
     use 'kyazdani42/nvim-tree.lua'
 
@@ -100,7 +102,7 @@ return packer.startup(function(use)
 
     --Clojure Conjure
 
-    use {"Olical/conjure", ft = {'clj','clojure'}}
+    use { "Olical/conjure", ft = { 'clj', 'clojure' } }
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins

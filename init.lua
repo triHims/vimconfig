@@ -18,8 +18,10 @@ require "config.snipload"
 
 
 local FZFEXTENDED = string.format('source %sfzfextend.vim',CONFIGDIR)
+local VIMDFF = string.format('source %svimdff.vim',CONFIGDIR)
 
 
 vim.cmd(FZFEXTENDED)
+vim.cmd(VIMDFF)
 
 

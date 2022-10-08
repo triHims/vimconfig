@@ -92,8 +92,19 @@ cmp.setup {
             "i",
             "s",
         }),
-        ["<M-Tab>"] = cmp.mapping(function(fallback) --quickly expand snippets 
-            if luasnip.expandable() then
+        ["<C-h>"] = cmp.mapping(function(fallback) --quickly expand snippets 
+            if luasnip.choice_active() then
+                luasnip.change_choice(-1)
+            else
+                fallback()
+            end
+        end, {
+            "i",
+        }),
+        ["<C-l>"] = cmp.mapping(function(fallback) --quickly expand snippets 
+            if luasnip.choice_active() then
+                luasnip.change_choice(1)
+            elseif luasnip.expandable() then
                 luasnip.expand()
             elseif luasnip.expand_or_jumpable() then
                 luasnip.expand_or_jump()
