@@ -8,5 +8,6 @@ vim.fn.setenv('WORKSPACE', '/Users/himansht/.cache/STSWorkspace/JDTLS')
 
 jdtls:get_default_options().on_new_config(config)
 
+print(vim.inspect(config))
 
 return config

@@ -41,6 +41,7 @@ let timeoutlen = 2000
 "Fzf binding
 nmap <C-P> :FZF<CR>
 nmap <leader>pf :Rg<CR>
+nmap <leader>pp :GFiles<CR>
 nnoremap <leader>bb :Buffers<CR>
 nnoremap <leader>hh :Helptags<CR>
 

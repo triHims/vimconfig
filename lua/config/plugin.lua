@@ -67,7 +67,10 @@ return packer.startup(function(use)
     use { 'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim' }
 
     -- snippets
-    use "L3MON4D3/LuaSnip" --snippet engine
+    use {"L3MON4D3/LuaSnip",
+        commit= "5ce70a0",
+    } --snippet engine
+
     use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
     --LSP Value
