@@ -1,6 +1,6 @@
 local config = { ... }
 config.use_lombok_agent = true
-local server_available, jdtls = require('nvim-lsp-installer.servers').get_server('jdtls')
+local server_available, jdtls = require('mason-lspconfig').get_installed_server('jdtls')
 
 vim.fn.setenv('WORKSPACE', '/home/himanshu/.cache/STSWorkspace/JDTLS')
 

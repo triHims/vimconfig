@@ -8,13 +8,13 @@ vim.opt.shortmess:append "c"
 require "config.keybindings"
 require "config.colors"
 require "config.cmp"
-require "config.lsp"
 require "config.treesitter"
 require "config.comment"
 require "config.gitsigns"
 require "config.nvim-tree"
 require "config.flutter"
 require "config.snipload"
+require "config.mason"
 
 
 local FZFEXTENDED = string.format('source %sfzfextend.vim',CONFIGDIR)
